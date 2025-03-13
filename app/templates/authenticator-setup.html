@@ -74,9 +74,7 @@
 
       // Construct the otpauth:// URL
       if (secret) {
-        const otpAuthUrl = `otpauth://totp/${encodeURIComponent(issuer)}:${encodeURIComponent(userEmail)}?secret=${secret}&issuer=${encodeURIComponent(issuer)}&algorithm=SHA1&digits=6&period=30`;
-
-        console.log("Generated otpauth:// URL:", otpAuthUrl); // Debugging step
+        const otpAuthUrl = `otpauth://totp/${encodeURIComponent(issuer)}:${encodeURIComponent(userEmail)}?secret=${qrCodeData}&issuer=${encodeURIComponent(issuer)}&algorithm=SHA1&digits=6&period=30`;
 
         // Generate and display the QR code
         new QRious({
